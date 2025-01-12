@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 12:02:19 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/12 16:14:18 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/01/12 17:03:12 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 class Contact
 {
@@ -127,7 +128,7 @@ class PhoneBook
             std::getline(std::cin, input);
             try
             {
-                int index = 1;
+                int index = atoi(input.c_str());
                 if (index >= 0 && index < count && index < 8)
                     contacts[index].displayFull();
                 else

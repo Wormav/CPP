@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 12:01:33 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/12 16:34:03 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/01/12 17:33:38 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ int main()
 		else if (command == "EXIT" || command == "exit")
 			break;
 	}
-
 	return (0);
 }
