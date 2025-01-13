@@ -1,16 +1,20 @@
-NAME		:= phone_book
+NAME		:= PhoneBook
 
 # Répertoires
-SRCS_DIR	:= .
+SRCS_DIR	:= src
 OBJS_DIR	:= obj
+INCS_DIR	:= includes
 
 # Compilation
 CC			:= c++
 CFLAGS		:= -std=c++98 -Wall -Wextra -Werror
-IFLAGS		:= -I .
+IFLAGS		:= -I $(INCS_DIR)
 
 # Sources
-SRCS		:=	phone_book.cpp
+SRCS		:=	main.cpp \
+                Contact.cpp \
+                PhoneBook.cpp
+
 SRCS		:= $(addprefix $(SRCS_DIR)/, $(SRCS))
 OBJS		:= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
@@ -33,14 +37,14 @@ BUILD_EMOJI		:= 🛠️
 all: $(OBJS_DIR) $(NAME)
 
 $(OBJS_DIR):
-	@mkdir -p $(OBJS_DIR)
+	@mkdir -p $(OBJS_DIR)/$(SRCS_DIR)
 
 $(NAME): $(OBJS)
 	@echo "$(YELLOW)$(BUILD_EMOJI)  Compilation en cours...$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
 	@echo "$(GREEN)$(SUCCESS_EMOJI) Compilation terminée !$(RESET)"
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.cpp
+$(OBJS_DIR)/%.o: %.cpp
 	@$(DIR_UP)
 	@echo "$(YELLOW)$(BUILD_EMOJI)  Compilation de $<...$(RESET)"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
