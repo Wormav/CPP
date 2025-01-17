@@ -6,32 +6,28 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 21:17:45 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/17 20:26:40 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/01/17 20:35:03 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.hpp>
 #include <iostream>
+#include <string>
 
 int main()
 {
-    int N = 5;
-    std::string name = "Zombie_amazing_name";
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string &stringREF = str;
 
-    Zombie* horde = zombieHorde(N, name);
-    if (!horde) {
-        std::cerr << "Erreur : Unable to create the horde." << std::endl;
-        return (1);
-    }
+	std::cout << "memory address of the string variable:" << &str << std::endl;
+	std::cout << "memory address held by stringPTR:" << stringPTR << std::endl;
+	std::cout << "memory address held by stringREF:" << &stringREF <<std::endl;
 
-    for (int i = 0; i < N; i++) {
-        horde[i].announce();
-    }
+	std::cout << std::endl;
 
-    for (int i = 0; i < N; i++) {
-        horde[i].~Zombie();
-    }
-    operator delete[](horde);
+	std::cout << "value of the string variable:" << str << std::endl;
+    std::cout << "value pointed to by stringPTR:" << *stringPTR << std::endl;
+    std::cout << "value pointed to by stringREF:" << stringREF << std::endl;
 
-    return 0;
+    return (0);
 }
