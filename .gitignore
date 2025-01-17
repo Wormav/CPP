@@ -1,3 +1,6 @@
+# Vscode
+.vscode
+
 # Prerequisites
 *.d
 
@@ -33,4 +36,4 @@
 *.app
 megaphone
 PhoneBook
-Test
+zombieHorde
