@@ -1,4 +1,4 @@
-NAME		:= zombieHorde
+NAME		:= human
 
 # Répertoires
 SRCS_DIR	:= src
