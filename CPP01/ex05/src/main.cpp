@@ -6,13 +6,14 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 16:35:58 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/26 16:22:44 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:13:10 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Harl.hpp>
 
-int main() {
+int main()
+{
     Harl harl;
 
     std::cout << "Test with DEBUG:" << std::endl;

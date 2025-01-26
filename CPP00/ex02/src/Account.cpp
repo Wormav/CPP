@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:54:06 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/13 14:02:19 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:10:15 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
 // Affiche l'horodatage au format spécifié
-void Account::_displayTimestamp(void) {
+void Account::_displayTimestamp(void)
+{
 	std::time_t t = std::time(NULL);
 	std::tm* now = std::localtime(&t);
 	std::cout << "["
@@ -39,14 +40,17 @@ void Account::_displayTimestamp(void) {
 // Constructeur
 Account::Account(int initial_deposit) :
 	_accountIndex(_nbAccounts++), _amount(initial_deposit),
-	_nbDeposits(0), _nbWithdrawals(0) {
-	_totalAmount += initial_deposit;
-	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";created" << std::endl;
-}
+	_nbDeposits(0), _nbWithdrawals(0)
+	{
+		_totalAmount += initial_deposit;
+		_displayTimestamp();
+		std::cout << "index:" << _accountIndex << ";amount:" << _amount
+		<< ";created" << std::endl;
+	}
 
 // Destructeur
-Account::~Account(void) {
+Account::~Account(void)
+{
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
@@ -58,7 +62,8 @@ int Account::getNbDeposits(void) { return _totalNbDeposits; }
 int Account::getNbWithdrawals(void) { return _totalNbWithdrawals; }
 
 // Affiche les informations sur tous les comptes
-void Account::displayAccountsInfos(void) {
+void Account::displayAccountsInfos(void)
+{
 	_displayTimestamp();
 	std::cout << "accounts:" << _nbAccounts
 	          << ";total:" << _totalAmount
@@ -67,7 +72,8 @@ void Account::displayAccountsInfos(void) {
 }
 
 // Fait un dépôt et met à jour les statistiques
-void Account::makeDeposit(int deposit) {
+void Account::makeDeposit(int deposit)
+{
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex
 	          << ";p_amount:" << _amount
@@ -81,7 +87,8 @@ void Account::makeDeposit(int deposit) {
 }
 
 // Effectue un retrait si possible
-bool Account::makeWithdrawal(int withdrawal) {
+bool Account::makeWithdrawal(int withdrawal)
+{
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex
 	          << ";p_amount:" << _amount
@@ -101,12 +108,14 @@ bool Account::makeWithdrawal(int withdrawal) {
 }
 
 // Vérifie le montant
-int Account::checkAmount(void) const {
+int Account::checkAmount(void) const
+{
 	return _amount;
 }
 
 // Affiche l'état du compte
-void Account::displayStatus(void) const {
+void Account::displayStatus(void) const
+{
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex
 	          << ";amount:" << _amount

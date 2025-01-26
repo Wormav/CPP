@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/12 12:02:19 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/26 17:08:21 by jlorette         ###   ########.fr       */
+/*   Created: 2025/01/26 14:24:46 by jlorette          #+#    #+#             */
+/*   Updated: 2025/01/26 14:25:30 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-# define PHONE_BOOK_HPP
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 #include <string>
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
-#include <Contact.hpp>
 
-class PhoneBook
+class Contact
 {
     private:
-        Contact contacts[8];
-        int count;
+        std::string firstName;
+        std::string lastName;
+        std::string nickname;
+        std::string phoneNumber;
+        std::string darkestSecret;
+
+        std::string truncate(std::string str) const;
 
     public:
-        PhoneBook();
-        void addContact();
-        void searchContact() const;
-        void displayContacts() const;
+        void setContact(std::string first, std::string last, std::string nick,
+                        std::string phone, std::string secret);
+        void displayFull() const;
+        void displayBrief(int index) const;
 };
 
 #endif
