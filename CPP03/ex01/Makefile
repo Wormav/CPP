@@ -13,6 +13,7 @@ IFLAGS		:= -I $(INCS_DIR)
 # Sources
 SRCS		:=	main.cpp \
 				ClapTrap.cpp \
+				ScavTrap.cpp \
 
 SRCS		:= $(addprefix $(SRCS_DIR)/, $(SRCS))
 OBJS		:= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)

@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 20:14:28 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/18 21:48:10 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:45:29 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,15 @@ public:
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 
-    void setHitPoints(unsigned int hp) { hitPoints = hp; }
-    void setEnergyPoints(unsigned int ep) { energyPoints = ep; }
-    void setAttackDamage(unsigned int ad) { attackDamage = ad; }
+	void setName(std::string name);
+    void setHitPoints(unsigned int hp);
+    void setEnergyPoints(unsigned int ep);
+    void setAttackDamage(unsigned int ad);
+
+	std::string     getName() const;
+	unsigned int    getHitPoints() const;
+	unsigned int    getEnergyPoints() const;
+	unsigned int    getAttackDamage() const;
 };
 
 #endif

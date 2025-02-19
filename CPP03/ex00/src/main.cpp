@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 21:01:33 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/18 21:19:59 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/02/19 09:59:34 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main()
     worbav.attack("Wormav");
     wormav.takeDamage(0);
 
-	std::cout << "\n----------------------------\n" << std::endl;
+	std::cout << "\n--- [ END GAME ] ---\n" << std::endl;
 
     return (0);
 }
