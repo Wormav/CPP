@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:31:06 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/13 11:31:07 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/03 20:20:05 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,17 +86,4 @@ void PhoneBook::searchContact() const
         return;
     }
     contacts[index].displayFull();
-}
-
-void PhoneBook::displayContacts() const
-{
-    if (count == 0)
-    {
-        std::cout << "Aucun contact enregistré" << std::endl;
-        return;
-    }
-    std::cout << "\n|     Index|First Name| Last Name| Nickname |" << std::endl;
-    std::cout << "|----------|----------|----------|----------|" << std::endl;
-    for (int i = 0; i < count && i < 8; i++)
-        contacts[i].displayBrief(i);
 }

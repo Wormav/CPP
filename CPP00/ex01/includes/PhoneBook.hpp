@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 12:02:19 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/26 17:08:21 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/03 20:19:22 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class PhoneBook
         PhoneBook();
         void addContact();
         void searchContact() const;
-        void displayContacts() const;
 };
 
 #endif

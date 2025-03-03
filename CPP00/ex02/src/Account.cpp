@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 13:54:06 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/26 17:10:15 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/03 20:41:43 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 #include <iomanip>
 #include <ctime>
 
-// Initialisation des variables statiques
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
 
-// Affiche l'horodatage au format spécifié
 void Account::_displayTimestamp(void)
 {
 	std::time_t t = std::time(NULL);
@@ -37,7 +35,6 @@ void Account::_displayTimestamp(void)
 	          << "] ";
 }
 
-// Constructeur
 Account::Account(int initial_deposit) :
 	_accountIndex(_nbAccounts++), _amount(initial_deposit),
 	_nbDeposits(0), _nbWithdrawals(0)
@@ -48,20 +45,17 @@ Account::Account(int initial_deposit) :
 		<< ";created" << std::endl;
 	}
 
-// Destructeur
 Account::~Account(void)
 {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
 
-// Accesseurs statiques
 int Account::getNbAccounts(void) { return _nbAccounts; }
 int Account::getTotalAmount(void) { return _totalAmount; }
 int Account::getNbDeposits(void) { return _totalNbDeposits; }
 int Account::getNbWithdrawals(void) { return _totalNbWithdrawals; }
 
-// Affiche les informations sur tous les comptes
 void Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
@@ -71,7 +65,6 @@ void Account::displayAccountsInfos(void)
 	          << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
-// Fait un dépôt et met à jour les statistiques
 void Account::makeDeposit(int deposit)
 {
 	_displayTimestamp();
@@ -86,7 +79,6 @@ void Account::makeDeposit(int deposit)
 	          << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
-// Effectue un retrait si possible
 bool Account::makeWithdrawal(int withdrawal)
 {
 	_displayTimestamp();
@@ -107,14 +99,11 @@ bool Account::makeWithdrawal(int withdrawal)
 	return true;
 }
 
-// Vérifie le montant
 int Account::checkAmount(void) const
 {
 	return _amount;
 }
-
-// Affiche l'état du compte
-void Account::displayStatus(void) const
+oid Account::displayStatus(void) const
 {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex
