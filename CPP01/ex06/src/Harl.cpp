@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 16:12:40 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/26 17:13:33 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/10 13:59:07 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,17 @@ void Harl::complain(std::string level)
             std::cout << "[ DEBUG ]" << std::endl;
             debug();
             std::cout << std::endl;
-            /* FALLTHROUGH */
+            break;
         case 1:
             std::cout << "[ INFO ]" << std::endl;
             info();
             std::cout << std::endl;
-            /* FALLTHROUGH */
+            break;
         case 2:
             std::cout << "[ WARNING ]" << std::endl;
             warning();
             std::cout << std::endl;
-            /* FALLTHROUGH */
+            break;
         case 3:
             std::cout << "[ ERROR ]" << std::endl;
             error();
@@ -72,11 +72,3 @@ void Harl::complain(std::string level)
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
 }
-
-/*
-** En C++98, le compilateur émet des avertissements pour les "fall-through" implicites
-** dans les switch-case. Ces avertissements sont traités comme des erreurs avec -Werror.
-** Le commentaire /* FALLTHROUGH  est une convention qui indique au compilateur que
-** le "fall-through" est intentionnel, permettant ainsi d'éviter ces avertissements.
-** En C++17, on utiliserait l'attribut [[fallthrough]] à la place.
-*/

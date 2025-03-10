@@ -42,22 +42,22 @@ $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)/$(SRCS_DIR)
 
 $(NAME): $(OBJS)
-	@echo "$(YELLOW)$(BUILD_EMOJI)  Compilation en cours...$(RESET)"
+	@echo "$(YELLOW)$(BUILD_EMOJI)  Compilation in progress...$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJS) -o $@
-	@echo "$(GREEN)$(SUCCESS_EMOJI) Compilation terminée !$(RESET)"
+	@echo "$(GREEN)$(SUCCESS_EMOJI) Compilation complete !$(RESET)"
 
 $(OBJS_DIR)/%.o: %.cpp
 	@$(DIR_UP)
-	@echo "$(YELLOW)$(BUILD_EMOJI)  Compilation de $<...$(RESET)"
+	@echo "$(YELLOW)$(BUILD_EMOJI)  Compilation of $<...$(RESET)"
 	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS_DIR)
-	@echo "$(RED)$(CLEAN_EMOJI)  Objets supprimés !$(RESET)"
+	@echo "$(RED)$(CLEAN_EMOJI)  Objects deleted!$(RESET)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(RED)$(CLEAN_EMOJI)  Executable supprimé !$(RESET)"
+	@echo "$(RED)$(CLEAN_EMOJI)  Executable deleted!$(RESET)"
 
 re: fclean all
 

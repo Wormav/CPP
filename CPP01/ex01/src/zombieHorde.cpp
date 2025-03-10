@@ -6,13 +6,13 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 18:52:15 by jlorette          #+#    #+#             */
-/*   Updated: 2025/01/17 19:15:55 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/10 14:01:38 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Zombie.hpp>
 #include <iostream>
-#include <sstream> // Pour std::ostringstream
+#include <sstream>
 
 Zombie* zombieHorde(int N, std::string name)
 {
