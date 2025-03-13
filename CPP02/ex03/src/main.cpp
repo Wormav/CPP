@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:19:48 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/02 12:03:07 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/13 13:48:07 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ int main()
     std::cout << "P3 is inside: " << bsp(A, B, C, P3) << std::endl;
     std::cout << "P4 is inside: " << bsp(A, B, C, P4) << std::endl;
 
-    return 0;
+    return (0);
 }

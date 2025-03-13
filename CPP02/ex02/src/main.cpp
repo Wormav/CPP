@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:19:48 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/02 11:57:48 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/13 13:47:12 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int main(void)
 
     std::cout << Fixed::max(a, b) << std::endl;
 
-    return 0;
+    return (0);
 }
