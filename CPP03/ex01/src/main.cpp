@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 21:01:33 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/19 09:59:05 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/18 11:19:17 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,34 @@ int main()
 
 	std::cout << "\n--- [ END GAME ] ---\n" << std::endl;
 
-    return (0);
+	std::cout << "\n--- [ TESTING ALL FUNCTIONS ] ---\n" << std::endl;
+
+	ClapTrap test;
+
+    // Testing assignment operator for ClapTrap
+    ClapTrap assigned;
+    assigned = wormav;
+    assigned.attack("Test Target");
+    assigned.takeDamage(5);
+    assigned.beRepaired(3);
+
+    // Testing default constructor and other functions for ClapTrap
+    test.attack("Default Target");
+    test.takeDamage(3);
+    test.beRepaired(1);
+
+    // Testing copy constructor for ScavTrap
+    ScavTrap scavyCopy(scavy);
+    scavyCopy.attack("Copy Target");
+    scavyCopy.guardGate();
+
+    // Testing assignment operator for ScavTrap
+    ScavTrap scavyAssigned;
+    scavyAssigned = scavy;
+    scavyAssigned.attack("Assigned Target");
+    scavyAssigned.guardGate();
+
+	std::cout << std::endl;
+
+	return (0);
 }

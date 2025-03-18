@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 20:35:34 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/19 10:38:52 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/18 11:13:03 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ ClapTrap::ClapTrap() : name("Wormav"), hitPoints(10), energyPoints(10), attackDa
 
 ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "ClapTrap" << name << "is born 🐣" << std::endl;
+	std::cout << "ClapTrap " << name << " is born 🐣" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& other)
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.name + "_copy"), hitPoints(other.hitPoints), energyPoints(other.energyPoints), attackDamage(other.attackDamage)
 {
-    *this = other;
     std::cout << "ClapTrap " << name << " is copied! 👨‍❤️‍👨" << std::endl;
 }
 
@@ -32,7 +31,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
     if (this != &other)
 	{
-        name = other.name;
+        name = other.name + "_assigned";
         hitPoints = other.hitPoints;
         energyPoints = other.energyPoints;
         attackDamage = other.attackDamage;
