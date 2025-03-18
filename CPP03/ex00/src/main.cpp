@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 21:01:33 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/19 09:59:34 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/18 09:48:15 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    ClapTrap wormav("Wormav");
+    ClapTrap wormav;
     ClapTrap worbav(wormav);
 
     std::cout << "\n--- [ Wormav VS Worbav ] ---\n" << std::endl;
