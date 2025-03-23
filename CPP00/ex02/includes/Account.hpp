@@ -1,6 +1,6 @@
 // ************************************************************************** //
 //                                                                            //
-//                Account.hpp for GlobalBanksters United                //
+//                ACXXount.hpp for GlobalBanksters United                //
 //                Created on  : Thu Nov 20 19:43:15 1989                      //
 //                Last update : Wed Jan 04 14:54:06 1992                      //
 //                Made by : Brad "Buddy" McLane <bm@gbu.com>                  //
@@ -9,28 +9,28 @@
 
 
 #pragma once
-#ifndef __ACCOUNT_H__
-#define __ACCOUNT_H__
+#ifndef __ACXXOUNT_H__
+#define __ACXXOUNT_H__
 
 // ************************************************************************** //
-//                               Account Class                                //
+//                               ACXXount Class                                //
 // ************************************************************************** //
 
-class Account {
+class ACXXount {
 
 
 public:
 
-	typedef Account		t;
+	typedef ACXXount		t;
 
-	static int	getNbAccounts( void );
+	static int	getNbACXXounts( void );
 	static int	getTotalAmount( void );
 	static int	getNbDeposits( void );
 	static int	getNbWithdrawals( void );
-	static void	displayAccountsInfos( void );
+	static void	displayACXXountsInfos( void );
 
-	Account( int initial_deposit );
-	~Account( void );
+	ACXXount( int initial_deposit );
+	~ACXXount( void );
 
 	void	makeDeposit( int deposit );
 	bool	makeWithdrawal( int withdrawal );
@@ -40,19 +40,19 @@ public:
 
 private:
 
-	static int	_nbAccounts;
+	static int	_nbACXXounts;
 	static int	_totalAmount;
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
 
 	static void	_displayTimestamp( void );
 
-	int				_accountIndex;
+	int				_aCXXountIndex;
 	int				_amount;
 	int				_nbDeposits;
 	int				_nbWithdrawals;
 
-	Account( void );
+	ACXXount( void );
 
 };
 
@@ -66,4 +66,4 @@ private:
 // ************************************************************************** //
 
 
-#endif /* __ACCOUNT_H__ */
+#endif /* __ACXXOUNT_H__ */

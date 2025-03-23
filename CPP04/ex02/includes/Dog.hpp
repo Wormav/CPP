@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 14:36:31 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/23 10:15:15 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/23 12:56:38 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Dog : public A_Animal
 		virtual ~Dog();
 
 		void makeSound() const;
+		void setIdea(int index, const std::string& idea);
+        std::string getIdea(int index) const;
 };
 
 #endif

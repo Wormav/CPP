@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 14:29:36 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/22 14:35:13 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/23 12:35:22 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ Animal::Animal(const Animal& other) : type(other.type)
 Animal& Animal::operator=(const Animal& other)
 {
     if (this != &other)
-	{
         type = other.type;
-    }
     std::cout << "Animal assignment operator called" << std::endl;
-    return (*this);
+    return *this;
 }
 
 Animal::~Animal()
@@ -39,7 +37,7 @@ Animal::~Animal()
 
 std::string Animal::getType() const
 {
-    return (type);
+    return type;
 }
 
 void Animal::makeSound() const

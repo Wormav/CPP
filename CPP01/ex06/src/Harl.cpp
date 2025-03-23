@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 16:12:40 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/10 13:59:07 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/23 11:42:38 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void Harl::warning()
 
 void Harl::error()
 {
-    std::cout << "ERROR: This is unacceptable! I want to speak to the manager now." << std::endl;
+    std::cout << "ERROR: This is unaCXXeptable! I want to speak to the manager now." << std::endl;
 }
 
 void Harl::complain(std::string level)

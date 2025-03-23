@@ -6,12 +6,12 @@ OBJS_DIR	:= obj
 INCS_DIR	:= includes
 
 # Compilation
-CC			:= c++
-CFLAGS		:= -std=c++98 -Wall -Wextra -Werror
+CXX			:= c++
+FLAGXX		:= -std=c++98 -Wall -Wextra -Werror
 IFLAGS		:= -I $(INCS_DIR)
 
 # Sources
-SRCS		:=	Account.cpp \
+SRCS		:=	ACXXount.cpp \
 				tests.cpp
 
 SRCS		:= $(addprefix $(SRCS_DIR)/, $(SRCS))
@@ -27,7 +27,7 @@ GREEN		:= \033[1;32m
 YELLOW		:= \033[1;33m
 RESET		:= \033[0m
 
-SUCCESS_EMOJI	:= ✅
+SUCXXESS_EMOJI	:= ✅
 CLEAN_EMOJI		:= 🗑️
 BUILD_EMOJI		:= 🛠️
 
@@ -40,13 +40,13 @@ $(OBJS_DIR):
 
 $(NAME): $(OBJS)
 	@echo "$(YELLOW)$(BUILD_EMOJI)  Compilation in progress...$(RESET)"
-	@$(CC) $(CFLAGS) $(OBJS) -o $@
-	@echo "$(GREEN)$(SUCCESS_EMOJI) Compilation complete !$(RESET)"
+	@$(CXX) $(FLAGXX) $(OBJS) -o $@
+	@echo "$(GREEN)$(SUCXXESS_EMOJI) Compilation complete !$(RESET)"
 
 $(OBJS_DIR)/%.o: %.cpp
 	@$(DIR_UP)
 	@echo "$(YELLOW)$(BUILD_EMOJI)  Compilation of $<...$(RESET)"
-	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	@$(CXX) $(FLAGXX) $(IFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS_DIR)

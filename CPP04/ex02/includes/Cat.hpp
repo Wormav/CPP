@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 14:48:52 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/23 10:15:27 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/23 12:56:35 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Cat : public A_Animal
     	virtual ~Cat();
 
     	void makeSound() const;
+		void setIdea(int index, const std::string& idea);
+        std::string getIdea(int index) const;
 };
 
 #endif

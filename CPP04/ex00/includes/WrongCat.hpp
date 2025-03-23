@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   A_Materia.hpp                                      :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 10:25:05 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/23 11:11:04 by jlorette         ###   ########.fr       */
+/*   Created: 2025/03/23 11:56:53 by jlorette          #+#    #+#             */
+/*   Updated: 2025/03/23 12:02:28 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include <iostream>
+#include <WrongAnimal.hpp>
 
-#include <I_Character.hpp>
-
-class I_Character;
-
-class A_Materia
+class WrongCat : public WrongAnimal
 {
 	protected:
 		std::string type;
 
 	public:
-		A_Materia(const std::string& type);
-		A_Materia(const A_Materia& other);
-		A_Materia& operator=(const A_Materia& other);
-		virtual ~A_Materia();
+		WrongCat();
+		WrongCat(const WrongCat &other);
+		WrongCat &operator=(const WrongCat &other);
+		~WrongCat();
 
-		std::string const & getType() const;
-		virtual A_Materia* clone() const = 0;
-		virtual void use(I_Character& target);
+		void makeSound() const;
 };
 
 #endif

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Account.cpp                                        :+:      :+:    :+:   */
+/*   ACXXount.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,17 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Account.hpp>
+#include <ACXXount.hpp>
 #include <iostream>
 #include <iomanip>
 #include <ctime>
 
-int Account::_nbAccounts = 0;
-int Account::_totalAmount = 0;
-int Account::_totalNbDeposits = 0;
-int Account::_totalNbWithdrawals = 0;
+int ACXXount::_nbACXXounts = 0;
+int ACXXount::_totalAmount = 0;
+int ACXXount::_totalNbDeposits = 0;
+int ACXXount::_totalNbWithdrawals = 0;
 
-void Account::_displayTimestamp(void)
+void ACXXount::_displayTimestamp(void)
 {
 	std::time_t t = std::time(NULL);
 	std::tm* now = std::localtime(&t);
@@ -35,40 +35,40 @@ void Account::_displayTimestamp(void)
 	          << "] ";
 }
 
-Account::Account(int initial_deposit) :
-	_accountIndex(_nbAccounts++), _amount(initial_deposit),
+ACXXount::ACXXount(int initial_deposit) :
+	_aCXXountIndex(_nbACXXounts++), _amount(initial_deposit),
 	_nbDeposits(0), _nbWithdrawals(0)
 	{
 		_totalAmount += initial_deposit;
 		_displayTimestamp();
-		std::cout << "index:" << _accountIndex << ";amount:" << _amount
+		std::cout << "index:" << _aCXXountIndex << ";amount:" << _amount
 		<< ";created" << std::endl;
 	}
 
-Account::~Account(void)
+ACXXount::~ACXXount(void)
 {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";closed" << std::endl;
+	std::cout << "index:" << _aCXXountIndex << ";amount:" << _amount << ";closed" << std::endl;
 }
 
-int Account::getNbAccounts(void) { return _nbAccounts; }
-int Account::getTotalAmount(void) { return _totalAmount; }
-int Account::getNbDeposits(void) { return _totalNbDeposits; }
-int Account::getNbWithdrawals(void) { return _totalNbWithdrawals; }
+int ACXXount::getNbACXXounts(void) { return _nbACXXounts; }
+int ACXXount::getTotalAmount(void) { return _totalAmount; }
+int ACXXount::getNbDeposits(void) { return _totalNbDeposits; }
+int ACXXount::getNbWithdrawals(void) { return _totalNbWithdrawals; }
 
-void Account::displayAccountsInfos(void)
+void ACXXount::displayACXXountsInfos(void)
 {
 	_displayTimestamp();
-	std::cout << "accounts:" << _nbAccounts
+	std::cout << "aCXXounts:" << _nbACXXounts
 	          << ";total:" << _totalAmount
 	          << ";deposits:" << _totalNbDeposits
 	          << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
-void Account::makeDeposit(int deposit)
+void ACXXount::makeDeposit(int deposit)
 {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex
+	std::cout << "index:" << _aCXXountIndex
 	          << ";p_amount:" << _amount
 	          << ";deposit:" << deposit;
 	_amount += deposit;
@@ -79,10 +79,10 @@ void Account::makeDeposit(int deposit)
 	          << ";nb_deposits:" << _nbDeposits << std::endl;
 }
 
-bool Account::makeWithdrawal(int withdrawal)
+bool ACXXount::makeWithdrawal(int withdrawal)
 {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex
+	std::cout << "index:" << _aCXXountIndex
 	          << ";p_amount:" << _amount
 	          << ";withdrawal:";
 	if (withdrawal > _amount) {
@@ -99,14 +99,14 @@ bool Account::makeWithdrawal(int withdrawal)
 	return true;
 }
 
-int Account::checkAmount(void) const
+int ACXXount::checkAmount(void) const
 {
 	return _amount;
 }
-oid Account::displayStatus(void) const
+oid ACXXount::displayStatus(void) const
 {
 	_displayTimestamp();
-	std::cout << "index:" << _accountIndex
+	std::cout << "index:" << _aCXXountIndex
 	          << ";amount:" << _amount
 	          << ";deposits:" << _nbDeposits
 	          << ";withdrawals:" << _nbWithdrawals << std::endl;

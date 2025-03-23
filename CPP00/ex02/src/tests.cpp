@@ -10,20 +10,20 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
-#include "Account.hpp"
+#include "ACXXount.hpp"
 
 
 int		main( void ){
 
-	typedef std::vector<Account::t>							  accounts_t;
+	typedef std::vector<ACXXount::t>							  aCXXounts_t;
 	typedef std::vector<int>								  ints_t;
-	typedef std::pair<accounts_t::iterator, ints_t::iterator> acc_int_t;
+	typedef std::pair<aCXXounts_t::iterator, ints_t::iterator> aCXX_int_t;
 
 	int	const				amounts[]	= { 42, 54, 957, 432, 1234, 0, 754, 16576 };
 	size_t const			amounts_size( sizeof(amounts) / sizeof(int) );
-	accounts_t				accounts( amounts, amounts + amounts_size );
-	accounts_t::iterator	acc_begin	= accounts.begin();
-	accounts_t::iterator	acc_end		= accounts.end();
+	aCXXounts_t				aCXXounts( amounts, amounts + amounts_size );
+	aCXXounts_t::iterator	aCXX_begin	= aCXXounts.begin();
+	aCXXounts_t::iterator	aCXX_end		= aCXXounts.end();
 
 	int	const			d[]			= { 5, 765, 564, 2, 87, 23, 9, 20 };
 	size_t const		d_size( sizeof(d) / sizeof(int) );
@@ -37,28 +37,28 @@ int		main( void ){
 	ints_t::iterator	wit_begin	= withdrawals.begin();
 	ints_t::iterator	wit_end		= withdrawals.end();
 
-	Account::displayAccountsInfos();
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	ACXXount::displayACXXountsInfos();
+	std::for_each( aCXX_begin, aCXX_end, std::mem_fun_ref( &ACXXount::displayStatus ) );
 
-	for ( acc_int_t it( acc_begin, dep_begin );
-		  it.first != acc_end && it.second != dep_end;
+	for ( aCXX_int_t it( aCXX_begin, dep_begin );
+		  it.first != aCXX_end && it.second != dep_end;
 		  ++(it.first), ++(it.second) ) {
 
 		(*(it.first)).makeDeposit( *(it.second) );
 	}
 
-	Account::displayAccountsInfos();
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	ACXXount::displayACXXountsInfos();
+	std::for_each( aCXX_begin, aCXX_end, std::mem_fun_ref( &ACXXount::displayStatus ) );
 
-	for ( acc_int_t it( acc_begin, wit_begin );
-		  it.first != acc_end && it.second != wit_end;
+	for ( aCXX_int_t it( aCXX_begin, wit_begin );
+		  it.first != aCXX_end && it.second != wit_end;
 		  ++(it.first), ++(it.second) ) {
 
 		(*(it.first)).makeWithdrawal( *(it.second) );
 	}
 
-	Account::displayAccountsInfos();
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+	ACXXount::displayACXXountsInfos();
+	std::for_each( aCXX_begin, aCXX_end, std::mem_fun_ref( &ACXXount::displayStatus ) );
 
 	return 0;
 }
