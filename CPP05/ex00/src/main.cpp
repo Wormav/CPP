@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:28:00 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 15:44:59 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/23 16:09:30 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int main()
 {
-    try {
+    try
+	{
         Bureaucrat defaultBureaucrat;
         std::cout << defaultBureaucrat << std::endl;
 
-        Bureaucrat highBureaucrat("High Bureaucrat", 1);
+        Bureaucrat highBureaucrat("High Bureaucrat", 2);
         Bureaucrat lowBureaucrat("Low Bureaucrat", 150);
 
         std::cout << highBureaucrat << std::endl;
@@ -38,26 +39,29 @@ int main()
         std::cout << assignBureaucrat << std::endl;
 
         Bureaucrat invalidBureaucrat("Invalid Bureaucrat", 151);
-    } catch (const GradeTooHighException& e) {
+    }
+	catch (const GradeTooHighException& e)
+	{
         std::cerr << "Caught exception: " << e.what() << std::endl;
-    } catch (const GradeTooLowException& e) {
+    }
+	catch (const GradeTooLowException& e)
+	{
         std::cerr << "Caught exception: " << e.what() << std::endl;
     }
 
     try
 	{
-        Bureaucrat tooLowBureaucrat("Too Low Bureaucrat", 149);
+        Bureaucrat tooLowBureaucrat("Too Low Bureaucrat", 0);
         std::cout << tooLowBureaucrat << std::endl;
         --tooLowBureaucrat;
     }
 	catch (const GradeTooHighException& e)
 	{
         std::cerr << "Caught exception: " << e.what() << std::endl;
-	}
-	catch (const GradeTooLowException& e)
+    } catch (const GradeTooLowException& e)
 	{
         std::cerr << "Caught exception: " << e.what() << std::endl;
-	}
+    }
 
     return 0;
 }
