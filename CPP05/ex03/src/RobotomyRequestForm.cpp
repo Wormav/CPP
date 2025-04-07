@@ -6,13 +6,13 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 22:17:43 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 23:23:07 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 07:36:21 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RobotomyRequestForm.hpp"
-#include "Bureaucrat.hpp"
-#include "GradeTooLowException.hpp"
+#include <RobotomyRequestForm.hpp>
+#include <Bureaucrat.hpp>
+#include <GradeTooLowException.hpp>
 #include <cstdlib>
 #include <ctime>
 

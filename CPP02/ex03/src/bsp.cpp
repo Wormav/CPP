@@ -6,26 +6,24 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 12:01:22 by jlorette          #+#    #+#             */
-/*   Updated: 2025/02/02 12:02:26 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/14 08:32:22 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Point.hpp>
 
-static Fixed	area(Point const &p1, Point const &p2, Point const &p3)
+static Fixed crossProduct(Point const& a, Point const& b)
 {
-    return Fixed(0.5f) * ( (p1.getX() * (p2.getY() - p3.getY())) +
-                           (p2.getX() * (p3.getY() - p1.getY())) +
-                           (p3.getX() * (p1.getY() - p2.getY())) ).toFloat();
+    return (a.getX() * b.getY() - a.getY() * b.getX());
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-    Fixed areaABC = area(a, b, c);
-    Fixed areaPBC = area(point, b, c);
-    Fixed areaPAC = area(a, point, c);
-    Fixed areaPAB = area(a, b, point);
+    Fixed crossPA_AB = crossProduct(point - a, b - a);
+    Fixed crossPB_BC = crossProduct(point - b, c - b);
+    Fixed crossPC_CA = crossProduct(point - c, a - c);
 
-    return (areaPBC > 0 && areaPAC > 0 && areaPAB > 0 &&
-            (areaABC == (areaPBC + areaPAC + areaPAB)));
+    return ((crossPA_AB >= 0 && crossPB_BC >= 0 && crossPC_CA >= 0) ||
+            (crossPA_AB <= 0 && crossPB_BC <= 0 && crossPC_CA <= 0)) &&
+            (crossPA_AB != 0 || crossPB_BC != 0 || crossPC_CA != 0);
 }
