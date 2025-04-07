@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:18:56 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 16:33:59 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 09:46:39 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Form
 		bool isSigned;
 		const int signGrade;
 		const int execGrade;
+		Form();
 
 	public:
 		Form(const std::string& name, int signGrade, int execGrade);
@@ -38,7 +39,8 @@ class Form
 
 		void beSigned(const Bureaucrat& bureaucrat);
 
-		friend std::ostream& operator<<(std::ostream& os, const Form& form);
 };
+
+std::ostream& operator<<(std::ostream& os, const Form& form);
 
 #endif

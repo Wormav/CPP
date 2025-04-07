@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:18:56 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 22:48:03 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 09:49:46 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class AForm
 		bool isSigned;
 		const int signGrade;
 		const int execGrade;
+		AForm();
 
 	public:
 		AForm(const std::string& name, int signGrade, int execGrade);
@@ -38,7 +39,7 @@ class AForm
 
 		void beSigned(const Bureaucrat& bureaucrat);
 		virtual void execute(const Bureaucrat& executor) const = 0;
-		friend std::ostream& operator<<(std::ostream& os, const AForm& form);
 };
+std::ostream& operator<<(std::ostream& os, const AForm& form);
 
 #endif

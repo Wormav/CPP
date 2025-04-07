@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:04:43 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 22:57:31 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 10:00:03 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ class Bureaucrat
 		void signForm(AForm& form);
 		void executeForm(const AForm& form);
 
-		friend std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 };
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);
 
 #endif
 

@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 22:31:31 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 23:19:26 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 09:57:11 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class PresidentialPardonForm : public AForm
 {
 	private:
 		std::string target;
+		PresidentialPardonForm();
 
 	public:
 		PresidentialPardonForm(const std::string& target);
