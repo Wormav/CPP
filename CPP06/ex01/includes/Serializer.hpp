@@ -6,14 +6,14 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 15:39:46 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/26 15:51:50 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/14 12:44:30 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
 
-#include "Data.hpp"
+#include <Data.hpp>
 
 class Serializer
 {
