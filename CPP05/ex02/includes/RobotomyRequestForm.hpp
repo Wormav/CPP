@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 22:24:51 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 23:19:51 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 09:51:17 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string target;
+		RobotomyRequestForm();
 
 	public:
 		RobotomyRequestForm(const std::string& target);
@@ -28,7 +29,7 @@ class RobotomyRequestForm : public AForm
 		virtual ~RobotomyRequestForm();
 
 		std::string getTarget() const;
-		virtual void execute(const Bureaucrat& executor) const;
+		void execute(const Bureaucrat& executor) const;
 };
 
 #endif

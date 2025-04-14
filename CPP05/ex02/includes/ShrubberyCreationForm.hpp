@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 22:12:14 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 23:20:26 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 09:51:33 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class ShrubberyCreationForm : public AForm
 {
 	private:
 		std::string target;
+		ShrubberyCreationForm();
 
 	public:
 		ShrubberyCreationForm(const std::string& target);

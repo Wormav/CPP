@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:47:28 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/13 13:47:02 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/14 07:53:25 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,8 @@ Fixed Fixed::operator*(const Fixed &other) const
 
 Fixed Fixed::operator/(const Fixed &other) const
 {
-    if (other.toFloat() == 0) {
+    if (other.toFloat() == 0)
+	{
         std::cerr << "Division by zero!" << std::endl;
         return (Fixed(0));
     }

@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 13:19:48 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/13 13:48:07 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/03/14 08:04:48 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 
     Point P1(2, 2);
     Point P2(5, 5);
-    Point P3(0, 0);
+    Point P3(2, 4);
     Point P4(2.5, 0);
 
     std::cout << "P1 is inside: " << bsp(A, B, C, P1) << std::endl;

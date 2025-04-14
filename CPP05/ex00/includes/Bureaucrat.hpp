@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 16:04:43 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 16:05:44 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 09:43:06 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 #include <iostream>
 #include <string>
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
+#include <GradeTooHighException.hpp>
+#include <GradeTooLowException.hpp>
 
 class Bureaucrat
 {
@@ -39,8 +39,8 @@ class Bureaucrat
     	Bureaucrat& operator--();
     	Bureaucrat operator--(int);
 
-    	friend std::ostream& operator<<(std::ostream& os,
-			const Bureaucrat& bureaucrat);
 };
+	std::ostream& operator<<(std::ostream& os,
+			const Bureaucrat& bureaucrat);
 
 #endif

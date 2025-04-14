@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/23 15:06:21 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/23 16:11:06 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/07 07:31:25 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name)
     this->grade = grade;
 }
 
-// Constructeur de copie
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name),
 	grade(other.grade) {}
 
