@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:25:51 by jlorette          #+#    #+#             */
-/*   Updated: 2025/04/15 07:43:33 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:17:59 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 
 Base *generate(void)
 {
+	srand(time(NULL));
     int i = rand() % 3;
 	std::cout << "Generated number: " << i << std::endl;
     if (i == 0)
@@ -44,29 +45,31 @@ void identify(Base *p)
 
 void identify(Base &p)
 {
-    try
-	{
-        A &a = dynamic_cast<A &>(p);
-        std::cout << "A" << std::endl;
-        (void)a;
-    }
-    catch(std::exception &e) {}
+	try {
+		A &a = dynamic_cast<A &>(p);
+		std::cout << "A" << std::endl;
+		(void)a;
+		return;
+	}
+	catch(std::exception &e) {}
 
-    try
-	{
-        B &b = dynamic_cast<B &>(p);
-        std::cout << "B" << std::endl;
-        (void)b;
-    }
-    catch(std::exception &e) {}
+	try {
+		B &b = dynamic_cast<B &>(p);
+		std::cout << "B" << std::endl;
+		(void)b;
+		return;
+	}
+	catch(std::exception &e) {}
 
-    try
-	{
-        C &c = dynamic_cast<C &>(p);
-        std::cout << "C" << std::endl;
-        (void)c;
-    }
-    catch(std::exception &e) {}
+	try {
+		C &c = dynamic_cast<C &>(p);
+		std::cout << "C" << std::endl;
+		(void)c;
+		return;
+	}
+	catch(std::exception &e) {}
+
+	throw std::runtime_error("Unknown type");
 }
 
 int main(void)
