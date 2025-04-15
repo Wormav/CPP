@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:25:51 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/26 16:33:57 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/15 07:43:33 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 Base *generate(void)
 {
-    srand(time(NULL));
     int i = rand() % 3;
+	std::cout << "Generated number: " << i << std::endl;
     if (i == 0)
         return new A();
     if (i == 1)
@@ -71,30 +71,30 @@ void identify(Base &p)
 
 int main(void)
 {
-    std::cout << "=== Test 1: Génération multiple avec différentes seeds ===" << std::endl;
+    std::cout << "=== Test 1: multiple ===" << std::endl;
     for (int i = 0; i < 5; i++)
 	{
         srand(time(NULL) + i);
         Base *ptr = generate();
-        std::cout << "Instance " << i + 1 << " est de type: ";
+        std::cout << "Instance " << i + 1 << " is type: ";
         identify(ptr);
-        std::cout << "Vérification par référence: ";
+        std::cout << "Vérification réf: ";
         identify(*ptr);
         std::cout << std::endl;
         delete ptr;
     }
 
-    std::cout << "\n=== Test 2: Test avec pointeur NULL ===" << std::endl;
+    std::cout << "\n=== Test 2: Test pointeur NULL ===" << std::endl;
     Base *null_ptr = NULL;
-    std::cout << "Identification du pointeur NULL: ";
+    std::cout << "Identification NULL: ";
     identify(null_ptr);
 
-    std::cout << "\n=== Test 3: Test avec instances explicites ===" << std::endl;
+    std::cout << "\n=== Test 3: Test instances ===" << std::endl;
     A a_instance;
     B b_instance;
     C c_instance;
 
-    std::cout << "Test des références:" << std::endl;
+    std::cout << "Test refs:" << std::endl;
     Base &ref_a = a_instance;
     Base &ref_b = b_instance;
     Base &ref_c = c_instance;
@@ -106,16 +106,16 @@ int main(void)
     std::cout << "Instance C: ";
     identify(ref_c);
 
-    std::cout << "\n=== Test 4: Test avec pointeurs explicites ===" << std::endl;
+    std::cout << "\n=== Test 4: Test pointeur ===" << std::endl;
     Base *ptr_a = &a_instance;
     Base *ptr_b = &b_instance;
     Base *ptr_c = &c_instance;
 
-    std::cout << "Pointeur vers A: ";
+    std::cout << "Pointeur A: ";
     identify(ptr_a);
-    std::cout << "Pointeur vers B: ";
+    std::cout << "Pointeur B: ";
     identify(ptr_b);
-    std::cout << "Pointeur vers C: ";
+    std::cout << "Pointeur C: ";
     identify(ptr_c);
 
     return 0;
