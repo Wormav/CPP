@@ -6,11 +6,14 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 15:43:03 by jlorette          #+#    #+#             */
-/*   Updated: 2025/03/26 15:54:01 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/15 15:13:16 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Serializer.hpp>
+#include <iostream>
+#include <stdint.h>
+
 
 Serializer::Serializer() {}
 
@@ -23,12 +26,12 @@ Serializer& Serializer::operator=(const Serializer&)
 
 Serializer::~Serializer() {}
 
-unsigned long Serializer::serialize(Data* ptr)
+uintptr_t Serializer::serialize(Data* ptr)
 {
-    return reinterpret_cast<unsigned long>(ptr);
+    return reinterpret_cast<uintptr_t>(ptr);
 }
 
-Data* Serializer::deserialize(unsigned long raw)
+Data* Serializer::deserialize(uintptr_t raw)
 {
     return reinterpret_cast<Data*>(raw);
 }
