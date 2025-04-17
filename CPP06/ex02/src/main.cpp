@@ -6,7 +6,7 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 16:25:51 by jlorette          #+#    #+#             */
-/*   Updated: 2025/04/15 15:17:59 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/04/17 16:23:43 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,17 +109,28 @@ int main(void)
     std::cout << "Instance C: ";
     identify(ref_c);
 
-    std::cout << "\n=== Test 4: Test pointeur ===" << std::endl;
-    Base *ptr_a = &a_instance;
-    Base *ptr_b = &b_instance;
-    Base *ptr_c = &c_instance;
+	std::cout << "\n=== Test 4: Test pointeur ===" << std::endl;
+	Base *ptr_a = &a_instance;
+	Base *ptr_b = &b_instance;
+	Base *ptr_c = &c_instance;
 
-    std::cout << "Pointeur A: ";
-    identify(ptr_a);
-    std::cout << "Pointeur B: ";
-    identify(ptr_b);
-    std::cout << "Pointeur C: ";
-    identify(ptr_c);
+	std::cout << "Pointeur A: ";
+	identify(ptr_a);
+	std::cout << "Pointeur B: ";
+	identify(ptr_b);
+	std::cout << "Pointeur C: ";
+	identify(ptr_c);
+
+	std::cout << "\n=== Test 5: Test unknown type ===" << std::endl;
+	class Unknown : public Base {};
+	Unknown unknown_instance;
+	Base& unknown_ref = unknown_instance;
+	try {
+		std::cout << "Unknown type: ";
+		identify(unknown_ref);
+	} catch (const std::exception& e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
 
     return 0;
 }
