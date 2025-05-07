@@ -6,24 +6,20 @@
 /*   By: jlorette <jlorette@42angouleme.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:56:57 by jlorette          #+#    #+#             */
-/*   Updated: 2025/04/04 17:05:17 by jlorette         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:15:29 by jlorette         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Span.hpp>
 
-// Constructeur par défaut
 Span::Span() : _N(0) {}
 
-// Constructeur avec taille
 Span::Span(unsigned int N) : _N(N) {
     _numbers.reserve(N);
 }
 
-// Constructeur de copie
 Span::Span(const Span &src) : _N(src._N), _numbers(src._numbers) {}
 
-// Opérateur d'assignation
 Span &Span::operator=(const Span &rhs) {
     if (this != &rhs) {
         _N = rhs._N;
@@ -32,10 +28,8 @@ Span &Span::operator=(const Span &rhs) {
     return *this;
 }
 
-// Destructeur
 Span::~Span() {}
 
-// Ajouter un nombre
 void Span::addNumber(int number) {
     if (_numbers.size() >= _N)
         throw FullSpanException();
@@ -43,7 +37,6 @@ void Span::addNumber(int number) {
     _numbers.push_back(number);
 }
 
-// Trouver le plus court span
 int Span::shortestSpan() const {
     if (_numbers.size() <= 1)
         throw NotEnoughNumbersException();
@@ -60,7 +53,6 @@ int Span::shortestSpan() const {
     return minSpan;
 }
 
-// Trouver le plus long span
 int Span::longestSpan() const {
     if (_numbers.size() <= 1)
         throw NotEnoughNumbersException();
